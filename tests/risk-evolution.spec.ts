@@ -3,11 +3,29 @@ import { expect, test } from "@playwright/test";
 test("decision room prioritizes common platform primitives", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Make change safer." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "An interactive Product Management Lead work sample." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "How to use this prototype" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Open Live Decision" })).toBeVisible();
+  await expect(page.getByText("2 squads")).toHaveCount(0);
+  await expect(page.getByText("PL", { exact: true })).toHaveCount(0);
   await expect(page.getByText("Decision Ledger + replay", { exact: true })).toBeVisible();
+
+  const help = page.getByRole("button", { name: "More information about Live Decision" });
+  await help.focus();
+  await expect(page.getByRole("tooltip").filter({ hasText: "The decision is not just a model score." })).toBeVisible();
+  await help.press("Escape");
 
   await page.getByRole("button", { name: /CCD2 explanation/ }).click();
   await expect(page.getByRole("heading", { name: "CCD2 explanation + review flow" })).toBeVisible();
   await expect(page.getByText(/Reason taxonomy, evidence bundle/)).toBeVisible();
+});
+
+test("evidence page maps sources to prototype assumptions", async ({ page }) => {
+  await page.goto("/about/");
+  await expect(page.getByRole("heading", { name: "Evidence map" })).toBeVisible();
+  await expect(page.getByText("Role evidence")).toBeVisible();
+  await expect(page.getByText("Prototype use", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText(/central problem framing/)).toBeVisible();
 });
 
 test("live decision changes customer action and reveals explanation", async ({ page }) => {

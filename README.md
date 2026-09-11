@@ -17,22 +17,22 @@ The prototype proposes a common safe-change layer:
 - a versioned **Decision Ledger** containing inputs, policy/model versions, reasons, fallbacks, latency and outcomes;
 - replay and champion/challenger shadowing before authority changes;
 - cohort-level release guardrails instead of global averages;
-- a governed set of next-best customer actions—not only approve or reject;
+- a governed set of next-best customer actions, not only approve or reject;
 - behavioral parity, failure rehearsal and fast rollback for legacy modernization;
 - a traceability chain from regulation to product capability to evidence;
 - Product Decision Records and a domain scorecard that align teams around outcomes.
 
 ## Product journey
 
-1. **Decision Room** — prioritize five competing demands under a two-squad, ten-week illustrative constraint.
-2. **Live Decision** — resolve credit, fraud, identity and exposure evidence into a conditional customer action.
-3. **Portfolio** — test limits against approval, loss, contribution and overextension guardrails.
-4. **Shadow Lab** — expose a cohort regression hidden by an attractive global average.
-5. **Modernization** — dual-run legacy and modern decisions, ramp cohorts and rehearse dependency failures.
-6. **Regulation** — map CCD2, AI Act and DORA requirements to working capabilities and evidence.
-7. **Roadmap** — show the first 90 days, PM topology, decision cadence, scorecard and launch record.
-8. **Why me** — a pure value proposition tied directly to demonstrated product artifacts.
-9. **About** — disclosure, assumptions and primary source trail.
+1. **Decision Room:** prioritize five competing demands and identify the common platform capability.
+2. **Live Decision:** resolve credit, fraud, identity and exposure evidence into a conditional customer action.
+3. **Portfolio:** test limits against approval, loss, contribution and overextension guardrails.
+4. **Shadow Lab:** expose a cohort regression hidden by an attractive global average.
+5. **Modernization:** dual-run legacy and modern decisions, ramp cohorts and rehearse dependency failures.
+6. **Regulation:** map CCD2, AI Act and DORA requirements to working capabilities and evidence.
+7. **Roadmap:** show the first 90 days, PM topology, decision cadence, scorecard and launch record.
+8. **Why me:** a pure value proposition tied directly to demonstrated product artifacts.
+9. **About:** disclosure, assumptions and primary source trail.
 
 ## Run locally
 

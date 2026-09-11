@@ -26,7 +26,7 @@ export function Portfolio() {
     <div className="page-stack">
       <PageHeader
         eyebrow="Portfolio · Credit product economics"
-        title="Optimize for a healthy book—not an approval rate."
+        title="Optimize for a healthy book, not an approval rate."
         description="Connect checkout policy to exposure, loss, fraud, customer overextension and contribution margin. The right answer can differ by market, product and customer tenure."
         aside={<StatusPill tone="info">Synthetic monthly cohort</StatusPill>}
       />
@@ -113,7 +113,7 @@ export function Portfolio() {
               </LineChart>
             </ResponsiveContainer>
           </div>
-          <div className="vintage-note"><span /> Jun is +17bp above March at M4—investigate before raising limits globally.</div>
+          <div className="vintage-note"><span /> Jun is +17bp above March at M4. Investigate before raising limits globally.</div>
         </section>
       </div>
 

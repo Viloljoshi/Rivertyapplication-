@@ -45,7 +45,7 @@ export function Roadmap() {
       <PageHeader
         eyebrow="Roadmap · Product Lead operating system"
         title="Run the domain by decisions, not ticket volume."
-        description="A transparent system for intake, prioritization, squad outcomes, risk acceptance and post-launch learning—designed for Product, Engineering, Risk, Data, Operations and Commercial teams."
+        description="A transparent system for intake, prioritization, squad outcomes, risk acceptance and post-launch learning. It is designed for Product, Engineering, Risk, Data, Operations and Commercial teams."
         aside={<StatusPill tone="positive">Outcome cadence</StatusPill>}
       />
 

@@ -17,7 +17,7 @@ const valuePillars = [
   },
   {
     icon: ChartSpline,
-    title: "Portfolio—not vanity—economics",
+    title: "Portfolio economics, not vanity metrics",
     value: "I connect approval gains to matured loss, fraud, exposure, overextension, operations and contribution margin.",
     proof: "Artifact: limit simulator, vintage view and cohort guardrails.",
   },
@@ -36,7 +36,7 @@ const valuePillars = [
   {
     icon: Handshake,
     title: "Leadership through operating context",
-    value: "I create the goals, metrics, decision rights and learning cadence that let PMs and engineers own outcomes—not wait for tickets.",
+    value: "I create the goals, metrics, decision rights and learning cadence that let PMs and engineers own outcomes instead of waiting for tickets.",
     proof: "Artifact: PM topology, weekly loop, scorecard and Product Decision Record.",
   },
 ];
@@ -54,11 +54,11 @@ export function WhyMe() {
       <section className="value-statement">
         <span>My proposition</span>
         <h2>Unify risk decisioning around a safe-change platform, then give teams the context and evidence to improve it continuously.</h2>
-        <p>The domain step I want to deepen at Riverty is consumer credit risk at European scale. The product-systems discipline—regulated journeys, decision infrastructure, analytical trade-offs and cross-functional delivery—is the contribution I am ready to make.</p>
+        <p>The domain step I want to deepen at Riverty is consumer credit risk at European scale. I am ready to contribute the product-systems discipline required for regulated journeys, decision infrastructure, analytical trade-offs and cross-functional delivery.</p>
       </section>
 
       <section className="surface value-grid-section">
-        <SectionHeader title="What that adds in practice" description="Each proposition is demonstrated somewhere in the artifact—not left as an interview adjective." />
+        <SectionHeader title="What that adds in practice" description="Each proposition is demonstrated somewhere in the artifact rather than left as an interview adjective." />
         <div className="value-grid">
           {valuePillars.map(({ icon: Icon, title, value, proof }, index) => (
             <article key={title}>
@@ -88,7 +88,7 @@ export function WhyMe() {
             "Add AI to customer decisions without a defined purpose, evidence contract and human path.",
             "Treat legacy replacement as a technical project detached from decision outcomes.",
             "Claim knowledge of Riverty’s internal architecture from public information.",
-          ].map((item) => <div key={item}><span>—</span><p>{item}</p></div>)}
+          ].map((item) => <div key={item}><span aria-hidden="true">×</span><p>{item}</p></div>)}
         </section>
       </div>
 

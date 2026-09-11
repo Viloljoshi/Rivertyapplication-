@@ -25,7 +25,7 @@ export function LiveDecision() {
       <PageHeader
         eyebrow="Live Decision · Invoice payment · Germany"
         title="One checkout. More than yes or no."
-        description="Separate credit capacity, fraud uncertainty, identity continuity and exposure—then choose the safest next-best action that can still serve the customer."
+        description="Separate credit capacity, fraud uncertainty, identity continuity and exposure. Then choose the safest next-best action that can still serve the customer."
         aside={<span className="decision-id">RDE-260912-18403 · 84 ms</span>}
       />
 
@@ -128,7 +128,7 @@ export function LiveDecision() {
       </div>
 
       <Callout title="Product principle" tone="positive">
-        Treat a decline as one possible action—not the definition of risk management. A governed action set can reduce avoidable rejection while preserving exposure, identity and loss controls.
+        Treat a decline as one possible action, not the definition of risk management. A governed action set can reduce avoidable rejection while preserving exposure, identity and loss controls.
       </Callout>
 
       <div className="page-next">

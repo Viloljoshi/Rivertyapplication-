@@ -42,7 +42,7 @@ export function Modernization() {
     <div className="page-stack">
       <PageHeader
         eyebrow="Modernization · Live platform evolution"
-        title="Migrate the decision—not the diagram."
+        title="Migrate the decision, not the diagram."
         description="Preserve the authorization contract, prove behavioral parity in dual-run, move cohorts gradually and make rollback a product feature."
         aside={<StatusPill tone="positive">Incremental strangler path</StatusPill>}
       />
@@ -120,7 +120,7 @@ export function Modernization() {
       </section>
 
       <Callout title="Product ownership in modernization" tone="info">
-        The Product Lead owns the migration’s customer contract, measurable parity, release gates, fallback behavior, risk acceptance and decommission evidence—not only the feature roadmap.
+        The Product Lead owns the migration’s customer contract, measurable parity, release gates, fallback behavior, risk acceptance and decommission evidence, not only the feature roadmap.
       </Callout>
       <div className="page-next"><Link href="/regulation" className="primary-button">Map regulation to capability <ArrowRight size={16} /></Link></div>
     </div>

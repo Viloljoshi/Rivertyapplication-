@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   Activity,
+  ArrowDown,
   ArrowRightLeft,
   BadgeCheck,
   BookOpenCheck,
@@ -113,11 +114,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <span className="signal-dot" />
             <span>Illustrative platform scenario</span>
           </div>
-          <div className="topbar-meta">
-            <span>12 Sep 2026</span>
-            <span>2 squads · 10 weeks</span>
-            <span className="avatar" aria-label="Product lead workspace">PL</span>
-          </div>
+          <Link href="/#walkthrough" className="topbar-guide">
+            <span className="guide-full">How to use this prototype</span>
+            <span className="guide-short">Guide</span>
+            <ArrowDown size={15} aria-hidden="true" />
+          </Link>
         </header>
 
         <main id="main-content" className="main-content">

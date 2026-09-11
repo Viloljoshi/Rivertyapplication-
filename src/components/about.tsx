@@ -6,7 +6,7 @@ export function About() {
     <div className="page-stack about-page">
       <PageHeader
         eyebrow="About · Scope and evidence"
-        title="A conversation artifact—not an inside view."
+        title="A conversation artifact, not an inside view."
         description="This independent work sample turns public information and an illustrative operating scenario into a testable Product Lead proposal. It does not represent Riverty systems, controls, data or readiness."
         aside={<StatusPill tone="warning">Public inference · synthetic data</StatusPill>}
       />
@@ -18,12 +18,14 @@ export function About() {
       </section>
 
       <section className="surface source-section">
-        <div className="section-header"><div><h2>Public source trail</h2><p>Primary sources used to ground the product hypothesis.</p></div><span className="formula-chip">Reviewed 12 Sep 2026</span></div>
+        <div className="section-header"><div><h2>Evidence map</h2><p>Each primary source is tied to the specific product assumption it supports. The links do not validate any synthetic metric or claim about Riverty’s internal implementation.</p></div><span className="formula-chip">Reviewed 12 Sep 2026</span></div>
+        <div className="source-map-header" aria-hidden="true"><span>Source</span><span>Public evidence</span><span>How it is used here</span></div>
         <div className="source-list">
           {publicSources.map((source, index) => (
             <article key={source.url}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div className="source-identity"><span>{String(index + 1).padStart(2, "0")}</span><small>{source.category}</small></div>
               <div><ExternalLink href={source.url}>{source.label}</ExternalLink><p>{source.note}</p></div>
+              <div className="source-use"><span>Prototype use</span><p>{source.supports}</p></div>
             </article>
           ))}
         </div>

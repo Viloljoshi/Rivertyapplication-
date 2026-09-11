@@ -30,7 +30,7 @@ export function Regulation() {
         </div>
         <div className="regulation-principle">
           <BookOpenCheck size={24} />
-          <blockquote>“Compliance-ready” means the product can explain what happened, support review, and reproduce the evidence—not that a policy document exists.</blockquote>
+          <blockquote>“Compliance-ready” means the product can explain what happened, support review, and reproduce the evidence. A policy document alone is not enough.</blockquote>
         </div>
       </section>
 

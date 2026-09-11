@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowUpRight, Info } from "lucide-react";
+import { useId } from "react";
 import type { Tone } from "@/lib/types";
 
 export function StatusPill({
@@ -71,6 +74,37 @@ export function Metric({
       <strong>{value}</strong>
       <small>{detail}</small>
     </div>
+  );
+}
+
+export function Tooltip({
+  label,
+  children,
+  align = "center",
+}: {
+  label: string;
+  children: React.ReactNode;
+  align?: "left" | "center" | "right";
+}) {
+  const id = useId();
+
+  return (
+    <span className="tooltip-root" data-align={align}>
+      <button
+        type="button"
+        className="tooltip-trigger"
+        aria-label={`More information about ${label}`}
+        aria-describedby={id}
+        onKeyDown={(event) => {
+          if (event.key === "Escape") event.currentTarget.blur();
+        }}
+      >
+        <Info size={13} aria-hidden="true" />
+      </button>
+      <span id={id} className="tooltip-content" role="tooltip">
+        {children}
+      </span>
+    </span>
   );
 }
 
