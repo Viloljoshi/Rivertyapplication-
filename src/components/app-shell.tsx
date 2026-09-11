@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   Activity,
-  ArrowDown,
   ArrowRightLeft,
   BadgeCheck,
   BookOpenCheck,
@@ -18,6 +17,7 @@ import {
   Network,
   X,
 } from "lucide-react";
+import { GuidedTour } from "@/components/guided-tour";
 
 const navItems = [
   { href: "/", label: "Decision Room", icon: Activity },
@@ -92,7 +92,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <small>to CCD2 application</small>
           </div>
           <Link href="/about" className={`about-link ${pathname === "/about" ? "active" : ""}`} onClick={() => setOpen(false)}>
-            <CircleHelp size={17} /> About & sources
+            <CircleHelp size={17} /> Research basis
           </Link>
         </div>
       </aside>
@@ -114,11 +114,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <span className="signal-dot" />
             <span>Illustrative platform scenario</span>
           </div>
-          <Link href="/#walkthrough" className="topbar-guide">
-            <span className="guide-full">How to use this prototype</span>
-            <span className="guide-short">Guide</span>
-            <ArrowDown size={15} aria-hidden="true" />
-          </Link>
+          <GuidedTour />
         </header>
 
         <main id="main-content" className="main-content">

@@ -217,75 +217,81 @@ export const regulatoryRequirements: RegulatoryRequirement[] = [
   },
 ];
 
-export const publicSources = [
+export const researchSignals = [
   {
-    category: "Brand evidence",
-    label: "Riverty consumer homepage",
-    url: "https://www.riverty.com/en/",
-    note: "Public brand language emphasizes calm, responsible and reassuring payment experiences.",
-    supports: "The warm paper palette, editorial typography, restrained green and direct interface voice.",
+    number: "01",
+    title: "The mandate is broader than model performance.",
+    signal:
+      "The role owns strategy, roadmap and delivery for real-time credit and fraud decisioning. It also carries PM leadership, modernization, prioritization and regulatory translation.",
+    response:
+      "Treat decision change as a product surface. One operating model should connect demand, policy, evidence, release authority and customer outcomes.",
+    sources: [
+      {
+        label: "Product Management Lead role",
+        url: "https://jobsearch.createyourowncareer.com/Riverty/job/Amsterdam-Product-Management-Lead-%28mfd%29-1079-MZ/1428381433/",
+      },
+    ],
   },
   {
-    category: "Role evidence",
-    label: "Product Management Lead role",
-    url: "https://jobsearch.createyourowncareer.com/Riverty/job/Amsterdam-Product-Management-Lead-%28mfd%29-1079-MZ/1428381433/",
-    note: "Role scope: risk decisioning strategy, PM leadership, modernization, regulation and platform delivery.",
-    supports: "The central problem framing, product-lead responsibilities and operating-model sections.",
+    number: "02",
+    title: "Every approval carries customer and balance-sheet consequences.",
+    signal:
+      "Riverty states that Payments & Credit serves more than 1,800 merchants and about 25 million customers, processes over 235 million transactions annually, guarantees accepted invoice payments and absorbs consumer non-payment risk.",
+    response:
+      "Judge a decision across conversion, fraud, credit loss, exposure, contribution and customer overextension. A single approval-rate target is not enough.",
+    sources: [
+      {
+        label: "Luxembourg bank announcement",
+        url: "https://www.riverty.com/no-no/bedrift/newsroom/riverty-establishes-bank-in-luxembourg/",
+      },
+      {
+        label: "Invoice payment product",
+        url: "https://www.riverty.com/en/business/products/payment-methods/invoice-payment/",
+      },
+    ],
   },
   {
-    category: "Company evidence",
-    label: "Riverty establishes Luxembourg bank",
-    url: "https://www.riverty.com/no-no/bedrift/newsroom/riverty-establishes-bank-in-luxembourg/",
-    note: "Public scale and July 2026 banking transition for Payments & Credit.",
-    supports: "The scale context and the need for strong decision governance, resilience and accountable change.",
+    number: "03",
+    title: "The public decision journey already extends beyond approve or decline.",
+    signal:
+      "Riverty documents transaction-level credit and fraud assessment, authorization outcomes and selective strong customer authentication based on order, identity and risk variables.",
+    response:
+      "Keep the authorization contract stable while policy selects the safest next action: approve, step up, limit, review or decline. Modernize behind that contract.",
+    sources: [
+      {
+        label: "Authorize payment",
+        url: "https://docs.riverty.com/bnpl/documentation/authorize_payment",
+      },
+      {
+        label: "Authorize API reference",
+        url: "https://docs.riverty.com/bnpl/api_reference/authorize_payment/",
+      },
+      {
+        label: "Strong customer authentication",
+        url: "https://docs.riverty.com/bnpl/documentation/sca/",
+      },
+    ],
   },
   {
-    category: "Product evidence",
-    label: "Invoice payment product",
-    url: "https://www.riverty.com/en/business/products/payment-methods/invoice-payment/",
-    note: "Guaranteed merchant payout, transaction-level assessment and non-payment risk.",
-    supports: "The connection between checkout approval, merchant value, credit exposure and portfolio loss.",
-  },
-  {
-    category: "Technical evidence",
-    label: "Authorize payment documentation",
-    url: "https://docs.riverty.com/bnpl/documentation/authorize_payment",
-    note: "The required authorization call triggers risk evaluation before acceptance.",
-    supports: "The live-decision journey and the stable authorization contract used in the modernization proposal.",
-  },
-  {
-    category: "Technical evidence",
-    label: "Authorize API action codes",
-    url: "https://docs.riverty.com/bnpl/api_reference/authorize_payment/",
-    note: "Public next actions include identity confirmation, secure methods and manual review.",
-    supports: "The next-best-action design, which goes beyond a binary approve or decline outcome.",
-  },
-  {
-    category: "Product evidence",
-    label: "Risk-driven strong customer authentication",
-    url: "https://docs.riverty.com/bnpl/documentation/sca/",
-    note: "SCA can be applied according to transaction and risk variables.",
-    supports: "Conditional approval and targeted step-up authentication for uncertain fraud cases.",
-  },
-  {
-    category: "Regulatory evidence",
-    label: "Consumer Credit Directive (EU) 2023/2225",
-    url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32023L2225",
-    note: "Automated assessment explanation, human intervention and review requirements.",
-    supports: "The customer explanation, human-review journey, reason taxonomy and evidence bundle.",
-  },
-  {
-    category: "Regulatory evidence",
-    label: "EU Artificial Intelligence Act",
-    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng",
-    note: "Creditworthiness use case and financial-fraud exception in Annex III.",
-    supports: "Purpose separation, model inventory and proportionate governance for credit and fraud models.",
-  },
-  {
-    category: "Regulatory evidence",
-    label: "Digital Operational Resilience Act",
-    url: "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
-    note: "ICT risk, resilience testing, continuity and third-party controls.",
-    supports: "Dependency SLOs, failure rehearsal, customer-safe fallbacks and recovery evidence.",
+    number: "04",
+    title: "Explanation, review and resilience belong in the release criteria.",
+    signal:
+      "CCD2 establishes rights around explanation, human intervention and review for automated creditworthiness assessment. The AI Act distinguishes creditworthiness from financial-fraud use cases, while DORA raises the bar for operational resilience.",
+    response:
+      "Version decision reasons, separate model purposes, test customer review paths and prove safe fallbacks before a change receives production authority.",
+    sources: [
+      {
+        label: "Consumer Credit Directive",
+        url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023L2225",
+      },
+      {
+        label: "EU AI Act",
+        url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      },
+      {
+        label: "Digital Operational Resilience Act",
+        url: "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+      },
+    ],
   },
 ];

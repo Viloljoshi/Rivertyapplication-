@@ -5,14 +5,10 @@ import { useMemo, useState } from "react";
 import {
   ArrowRight,
   ArrowRightLeft,
-  BookOpenCheck,
   Braces,
-  BriefcaseBusiness,
   ChartNoAxesCombined,
   Clock3,
-  FlaskConical,
   GitBranch,
-  Landmark,
   Network,
   ShieldCheck,
   Sparkles,
@@ -30,70 +26,33 @@ const sequence = [
   { stage: "Release", label: "Segmented ramp", state: "decide" },
 ];
 
-const walkthrough = [
-  {
-    href: "/",
-    label: "Decision Room",
-    icon: ShieldCheck,
-    purpose: "Frame the product problem and rank competing asks by urgency, risk reduction, strategic enablement, reach, effort and confidence.",
-    action: "Select a demand and inspect why a shared platform primitive outranks a local feature.",
-    help: "This is the portfolio-level judgment expected of the Product Management Lead: choosing the work that unlocks several outcomes at once.",
-  },
+const prototypePaths = [
   {
     href: "/live-decision",
-    label: "Live Decision",
+    label: "Decide",
+    pages: "Decision Room + Live Decision",
     icon: ArrowRightLeft,
-    purpose: "Follow one invoice checkout across credit capacity, fraud uncertainty, identity continuity, exposure and policy.",
-    action: "Compare blanket rejection, conditional approval and full approval, then open the customer explanation.",
-    help: "The decision is not just a model score. Product policy converts several signals into an explainable customer action.",
+    purpose: "See how platform signals become an explainable customer action and how competing demands are prioritized.",
+    action: "Start with one checkout decision",
+    help: "Use this path to discuss product judgment: what ships first, how policy balances credit and fraud, and what the customer experiences.",
   },
   {
     href: "/portfolio",
-    label: "Portfolio",
+    label: "Prove",
+    pages: "Portfolio + Shadow Lab",
     icon: ChartNoAxesCombined,
-    purpose: "Connect an instant checkout decision to approval quality, matured loss, fraud, exposure, contribution and overextension.",
-    action: "Move the credit-limit slider until a responsible-lending guardrail is breached.",
-    help: "Approval is immediate, while loss matures later. Portfolio views prevent a short-term conversion win from hiding downstream harm.",
-  },
-  {
-    href: "/shadow-lab",
-    label: "Shadow Lab",
-    icon: FlaskConical,
-    purpose: "Compare a champion and challenger on the same historical traffic, then find regressions hidden inside the global average.",
-    action: "Switch from global to segmented release and inspect the Sweden new-customer cohort.",
-    help: "Shadowing tests a new model or policy without giving it production authority. Segmentation lets strong cohorts progress while weak ones stay protected.",
+    purpose: "Connect instant approval to matured outcomes, then test whether a challenger is safe for each customer cohort.",
+    action: "Stress a limit and test a segmented release",
+    help: "Use this path to discuss evidence quality: delayed loss, customer overextension, cohort regressions, guardrails and rollback criteria.",
   },
   {
     href: "/modernization",
-    label: "Modernization",
+    label: "Deliver",
+    pages: "Modernization + Regulation + Roadmap + Why me",
     icon: Network,
-    purpose: "Show how legacy and modern decision services can coexist behind one contract while behavioral parity is proven.",
-    action: "Change migration authority and rehearse a bureau, model, feature or registry failure.",
-    help: "The migration is governed by customer outcomes, parity and rollback evidence, not by a code-complete milestone.",
-  },
-  {
-    href: "/regulation",
-    label: "Regulation",
-    icon: Landmark,
-    purpose: "Translate CCD2, the AI Act and DORA from legal requirements into product capabilities, evidence and accountable ownership.",
-    action: "Filter by framework and trace one obligation from requirement to evidence.",
-    help: "This is a product-readiness map, not legal advice. It makes the implementation and evidence gap visible to every delivery partner.",
-  },
-  {
-    href: "/roadmap",
-    label: "Roadmap",
-    icon: BookOpenCheck,
-    purpose: "Demonstrate the operating model for strategy, PM ownership, outcome metrics, intake and consequential product decisions.",
-    action: "Open each 30-day phase and review the Product Decision Record at the end.",
-    help: "The roadmap is organized around decisions and measurable outcomes, so teams receive context instead of a queue of tickets.",
-  },
-  {
-    href: "/why-me",
-    label: "Why me",
-    icon: BriefcaseBusiness,
-    purpose: "Connect the artifact directly to the value I would bring across strategy, technical product depth, economics and leadership.",
-    action: "Use the six value cards as prompts for the interview conversation.",
-    help: "Every value statement points back to a working part of the prototype, keeping the proposition evidence-led rather than adjective-led.",
+    purpose: "Inspect migration authority, regulatory evidence, the first 90 days and the leadership value behind the proposal.",
+    action: "Rehearse a failure, then inspect the operating model",
+    help: "Use this path to discuss execution: stable contracts, resilience, accountable regulation, PM leadership and measurable decisions.",
   },
 ];
 
@@ -126,7 +85,7 @@ export function DecisionRoom() {
           <span>What to evaluate</span>
           <h2>Product judgment, technical depth and leadership clarity.</h2>
           <p>Look for explicit trade-offs, customer consequences, release evidence and accountable decisions.</p>
-          <Link href="/about" className="orientation-source">Review evidence and assumptions <ArrowRight size={14} aria-hidden="true" /></Link>
+          <Link href="/about" className="orientation-source">See the research basis <ArrowRight size={14} aria-hidden="true" /></Link>
         </article>
       </section>
 
@@ -144,39 +103,40 @@ export function DecisionRoom() {
         </div>
       </section>
 
-      <Callout title="The problem I would validate first" tone="info">
-        Riverty’s public role brief points to a convergence problem: commercial, risk, regulatory, analytics and legacy-platform changes all need the same live decision surface. The opportunity is a governed change layer, not a replacement model. This is a public-evidence hypothesis, not a claim about Riverty’s internal architecture.
+      <Callout title="First discovery question" tone="info">
+        Where does change friction concentrate today: fragmented decision evidence, inconsistent release gates, or ownership across legacy and modern services? I would test this with incident data, replay coverage, cohort reversals, manual review volume and time to rollback before committing to the solution.
       </Callout>
 
       <section id="walkthrough" className="surface walkthrough-surface">
         <SectionHeader
-          title="How to use this prototype"
-          description="Follow the story in order, or open the section closest to your interview question. Each page moves from evidence to a concrete product decision."
+          title="Choose the question you want to test"
+          description="Use the guided tour in the top bar for the complete story, or take one of these three interview paths."
           aside={
             <span className="walkthrough-key">
-              8 connected sections
-              <Tooltip label="guided walkthrough" align="right">
-                Start with Decision Room, follow the next-step button at the bottom of each page, and finish with Why me. Every number is either publicly sourced or clearly marked synthetic.
+              3 connected paths
+              <Tooltip label="prototype navigation" align="right" triggerText="How it works">
+                Every path moves from a product question to an interaction, an evidence threshold and a decision. Use the page footer to continue through the full sequence.
               </Tooltip>
             </span>
           }
         />
         <div className="walkthrough-grid">
-          {walkthrough.map(({ href, label, icon: Icon, purpose, action, help }, index) => (
+          {prototypePaths.map(({ href, label, pages, icon: Icon, purpose, action, help }, index) => (
             <article className="walkthrough-card" key={label}>
               <div className="walkthrough-card-top">
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <Icon size={20} aria-hidden="true" />
-                <Tooltip label={label} align="right">{help}</Tooltip>
+                <Tooltip label={label} align="right" triggerText="Why?">{help}</Tooltip>
               </div>
               <h3>{label}</h3>
+              <span className="walkthrough-pages">{pages}</span>
               <p>{purpose}</p>
               <div className="walkthrough-action">
                 <span>Try this</span>
                 <strong>{action}</strong>
               </div>
               <Link href={href} className="walkthrough-link">
-                Open {label} <ArrowRight size={15} aria-hidden="true" />
+                Start this path <ArrowRight size={15} aria-hidden="true" />
               </Link>
             </article>
           ))}

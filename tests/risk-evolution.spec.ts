@@ -4,15 +4,23 @@ test("decision room prioritizes common platform primitives", async ({ page }) =>
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Make change safer." })).toBeVisible();
   await expect(page.getByRole("heading", { name: "An interactive Product Management Lead work sample." })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "How to use this prototype" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Open Live Decision" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Choose the question you want to test" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Start this path" }).first()).toBeVisible();
   await expect(page.getByText("2 squads")).toHaveCount(0);
   await expect(page.getByText("PL", { exact: true })).toHaveCount(0);
   await expect(page.getByText("Decision Ledger + replay", { exact: true })).toBeVisible();
 
-  const help = page.getByRole("button", { name: "More information about Live Decision" });
+  await page.getByRole("button", { name: "Start guided tour" }).click();
+  await expect(page.getByRole("dialog", { name: "Begin with the decision, not the dashboard." })).toBeVisible();
+  await page.getByRole("button", { name: "Next" }).click();
+  await expect(page.getByRole("heading", { name: "Follow one checkout from signals to customer action." })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Open Live Decision" })).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+
+  const help = page.getByRole("button", { name: "More information about Decide" });
   await help.focus();
-  await expect(page.getByRole("tooltip").filter({ hasText: "The decision is not just a model score." })).toBeVisible();
+  await expect(page.getByRole("tooltip").filter({ hasText: "Use this path to discuss product judgment" })).toBeVisible();
   await help.press("Escape");
 
   await page.getByRole("button", { name: /CCD2 explanation/ }).click();
@@ -20,12 +28,14 @@ test("decision room prioritizes common platform primitives", async ({ page }) =>
   await expect(page.getByText(/Reason taxonomy, evidence bundle/)).toBeVisible();
 });
 
-test("evidence page maps sources to prototype assumptions", async ({ page }) => {
+test("research basis connects public signals to product responses", async ({ page }) => {
   await page.goto("/about/");
-  await expect(page.getByRole("heading", { name: "Evidence map" })).toBeVisible();
-  await expect(page.getByText("Role evidence")).toBeVisible();
-  await expect(page.getByText("Prototype use", { exact: true }).first()).toBeVisible();
-  await expect(page.getByText(/central problem framing/)).toBeVisible();
+  await expect(page.getByRole("heading", { name: "The case for safer change." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "From signal to product response" })).toBeVisible();
+  await expect(page.getByText("The mandate is broader than model performance.")).toBeVisible();
+  await expect(page.getByText(/Treat decision change as a product surface/)).toBeVisible();
+  await expect(page.getByText("What is inferred")).toHaveCount(0);
+  await expect(page.getByText("Prototype use")).toHaveCount(0);
 });
 
 test("live decision changes customer action and reveals explanation", async ({ page }) => {

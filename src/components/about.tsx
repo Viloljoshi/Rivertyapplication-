@@ -1,41 +1,68 @@
+import { ArrowRight } from "lucide-react";
 import { ExternalLink, PageHeader, StatusPill } from "@/components/ui";
-import { publicSources } from "@/lib/data";
+import { researchSignals } from "@/lib/data";
 
 export function About() {
   return (
     <div className="page-stack about-page">
       <PageHeader
-        eyebrow="About · Scope and evidence"
-        title="A conversation artifact, not an inside view."
-        description="This independent work sample turns public information and an illustrative operating scenario into a testable Product Lead proposal. It does not represent Riverty systems, controls, data or readiness."
-        aside={<StatusPill tone="warning">Public inference · synthetic data</StatusPill>}
+        eyebrow="Research basis"
+        title="The case for safer change."
+        description="This work sample tests one proposition: a European credit and fraud platform should make every policy, model and service change traceable, testable and reversible before it reaches scale."
+        aside={<StatusPill tone="info">Independent work sample</StatusPill>}
       />
 
-      <section className="disclosure-panel">
-        <div><span>What is public</span><p>Role scope, published product behavior, public scale statements and EU regulatory text linked below.</p></div>
-        <div><span>What is inferred</span><p>The change-governance problem, common platform primitives and suggested sequencing.</p></div>
-        <div><span>What is synthetic</span><p>Every customer, transaction, score, metric, model result, cohort, incident, team capacity and roadmap date.</p></div>
+      <section className="research-logic" aria-label="How the product hypothesis was formed">
+        <article>
+          <span>Public signal</span>
+          <strong>Role mandate, product mechanics, scale and regulation</strong>
+        </article>
+        <ArrowRight size={18} aria-hidden="true" />
+        <article>
+          <span>Product hypothesis</span>
+          <strong>Safe change is the shared constraint</strong>
+        </article>
+        <ArrowRight size={18} aria-hidden="true" />
+        <article>
+          <span>Prototype response</span>
+          <strong>Ledger, replay, shadowing, guardrails and review</strong>
+        </article>
       </section>
 
-      <section className="surface source-section">
-        <div className="section-header"><div><h2>Evidence map</h2><p>Each primary source is tied to the specific product assumption it supports. The links do not validate any synthetic metric or claim about Riverty’s internal implementation.</p></div><span className="formula-chip">Reviewed 12 Sep 2026</span></div>
-        <div className="source-map-header" aria-hidden="true"><span>Source</span><span>Public evidence</span><span>How it is used here</span></div>
-        <div className="source-list">
-          {publicSources.map((source, index) => (
-            <article key={source.url}>
-              <div className="source-identity"><span>{String(index + 1).padStart(2, "0")}</span><small>{source.category}</small></div>
-              <div><ExternalLink href={source.url}>{source.label}</ExternalLink><p>{source.note}</p></div>
-              <div className="source-use"><span>Prototype use</span><p>{source.supports}</p></div>
+      <section className="surface research-section">
+        <div className="section-header">
+          <div>
+            <h2>From signal to product response</h2>
+            <p>Four public signals shape the proposal. Each one leads to a concrete product response tested elsewhere in the prototype.</p>
+          </div>
+          <span className="formula-chip">Primary sources</span>
+        </div>
+        <div className="research-list">
+          {researchSignals.map((item) => (
+            <article key={item.number}>
+              <div className="research-number">{item.number}</div>
+              <div className="research-copy">
+                <h3>{item.title}</h3>
+                <p>{item.signal}</p>
+                <div className="research-response">
+                  <span>Product response</span>
+                  <strong>{item.response}</strong>
+                </div>
+                <div className="research-links" aria-label={`Sources for ${item.title}`}>
+                  {item.sources.map((source) => (
+                    <ExternalLink key={source.url} href={source.url}>{source.label}</ExternalLink>
+                  ))}
+                </div>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="about-principles">
-        <div><strong>No legal advice</strong><p>Regulatory interpretation must be validated by Riverty Legal, Compliance and accountable risk owners.</p></div>
-        <div><strong>No performance claim</strong><p>Numbers are deterministic product-design inputs for exploring trade-offs, not benchmarks or forecasts.</p></div>
-        <div><strong>No AI decision theatre</strong><p>AI appears only where purpose, accountability, evidence, monitoring and human intervention can be made explicit.</p></div>
-      </section>
+      <aside className="scope-note">
+        <strong>Scope</strong>
+        <p>Built from public material and a synthetic operating scenario. Metrics and outcomes are illustrative, the architecture is a hypothesis to validate with Riverty, and regulatory interpretation remains with accountable Legal, Compliance and Risk owners.</p>
+      </aside>
     </div>
   );
 }

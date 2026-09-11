@@ -81,10 +81,12 @@ export function Tooltip({
   label,
   children,
   align = "center",
+  triggerText,
 }: {
   label: string;
   children: React.ReactNode;
   align?: "left" | "center" | "right";
+  triggerText?: string;
 }) {
   const id = useId();
 
@@ -92,13 +94,14 @@ export function Tooltip({
     <span className="tooltip-root" data-align={align}>
       <button
         type="button"
-        className="tooltip-trigger"
+        className={`tooltip-trigger ${triggerText ? "has-label" : ""}`}
         aria-label={`More information about ${label}`}
         aria-describedby={id}
         onKeyDown={(event) => {
           if (event.key === "Escape") event.currentTarget.blur();
         }}
       >
+        {triggerText && <span>{triggerText}</span>}
         <Info size={13} aria-hidden="true" />
       </button>
       <span id={id} className="tooltip-content" role="tooltip">
